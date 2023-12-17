@@ -1,0 +1,25 @@
+{
+  "name": "nobounce-scrolling",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "unbuild"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "unbuild": "2.0.0"
+  }
+}
