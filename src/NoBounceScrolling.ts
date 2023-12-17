@@ -59,7 +59,7 @@ class NoBounceScrolling {
     return new NoBounceScrolling(element, options);
   }
 
-  onTouchStart(event: TouchEvent) {
+  private onTouchStart(event: TouchEvent) {
     const { clientX, clientY } = this.getClientXY(event);
     this.touchX = clientX;
     this.touchY = clientY;
@@ -71,7 +71,7 @@ class NoBounceScrolling {
     });
   }
 
-  onTouchMove(event: TouchEvent) {
+  private onTouchMove(event: TouchEvent) {
     event.preventDefault();
     event.stopPropagation();
     requestAnimationFrame(() => {
@@ -100,7 +100,7 @@ class NoBounceScrolling {
     });
   }
 
-  onTouchEnd(event: TouchEvent) {
+  private onTouchEnd(event: TouchEvent) {
     const { clientX, clientY } = this.getClientXY(event);
 
     this.touchX = clientX;
@@ -144,7 +144,7 @@ class NoBounceScrolling {
     }
   }
 
-  getClientXY(event: TouchEvent) {
+  private getClientXY(event: TouchEvent) {
     const clientX = event?.changedTouches && Number(event?.changedTouches[0]?.clientX?.toFixed(6));
     const clientY = event?.changedTouches && Number(event?.changedTouches[0]?.clientY?.toFixed(6));
     return { clientX, clientY };
